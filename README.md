@@ -66,7 +66,7 @@ See [`Trampoline.scala`](https://github.com/TomasMikula/freebind/blob/master/src
 
 ```scala
 class FreeBindMonadTrans extends MonadTrans[FreeBind] {
-  def liftM[F[_], A](ga: F[A])(implicit F: Monad[F]): FreeBind[F, A] = LiftF(ga)
+  def liftM[F[_], A](fa: F[A])(implicit F: Monad[F]): FreeBind[F, A] = LiftF(fa)
 
   implicit def apply[F[_]](implicit F: Monad[F]): Monad[FreeBind[F, ?]] =
     new Monad[FreeBind[F, ?]] {
