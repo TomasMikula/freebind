@@ -58,6 +58,8 @@ type Trampoline[A] = FreeBind[Id, A]
 
 The representation of a trampoline via `Free` just has one case too many.
 
+See [`Trampoline.scala`](https://github.com/TomasMikula/freebind/blob/master/src/main/scala/freebind/Trampoline.scala) for a more complete implementation.
+
 ### Monad transformer
 
 `Free` is a monad transformer that turns a strict monad into a lazy one. But so is `FreeBind`:
